@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 配置注解扫描 -->
+    <context:component-scan base-package="io.dearas.rpcservice">
+        <context:include-filter type="annotation" expression="io.dearas.RpcProviders"></context:include-filter>
+    </context:component-scan>
+
+    <!-- 配置RpcServer的自动发布接口和自动开启Netty服务端: 先扫描注解，后加载此对象。-->
+    <bean class="io.dearas.server.RpcNettyServer"></bean>
+</beans>
