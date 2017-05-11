@@ -5,4 +5,5 @@
 
 * 客户端与服务端通信使用Netty。Nio框架。
 * 对象传递用Protostuff序列化。
+* 客户端查询服务端ip:port 采用Zookeeper实现。
 
